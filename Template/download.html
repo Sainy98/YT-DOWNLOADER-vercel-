@@ -1,0 +1,25 @@
+{%extends 'index.html'%}
+{%block content%}
+<h3>{{TITLE}} </h3>
+<h3>{{(yt.length/60)|round(2)}} minutes</h3>
+<img src="{{image}}" alt="" id="im">
+<form action="{{url_for('downloaded')}}" method="POST">
+    <select name="itag" class="itag">
+        {% for i in yt.streams.filter(progressive=True) %}
+        <option value="{{i.itag}}">{{i.resolution}} {{(i.filesize/1000000)|round(1)}}mb</option>
+        {%endfor%}
+
+    </select>
+
+    <button type="submit" onclick="submit()">Download</button>
+    <div id="wal" style="display: none;">
+        <img src="/static/css/1474.gif" alt="" srcset=""> <br>
+        <span>Wait, your video is downloading........</span>
+    </div>
+    <script>
+        function submit() {
+            document.getElementById("wal").style.display = 'block';
+        }
+    </script>
+</form>
+{%endblock content%}
