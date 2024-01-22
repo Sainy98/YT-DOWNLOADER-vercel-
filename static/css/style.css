@@ -1,3 +1,15 @@
+body {
+    background-color: black;
+    font-family: monospace;
+    color: yellow;
+    border: 2px solid;
+    text-align: -webkit-center;
+}
+
+/* Media query for screens with a minimum width of 600px */
+
+
+/* Keyframes for typewriter animation */
 @keyframes typewriter {
     from {
         width: 0;
@@ -8,25 +20,6 @@
     }
 }
 
-/* Apply the animation to the title */
-h1 {
-    overflow: hidden;
-    /* Hide overflow text */
-    border-right: .15em solid orange;
-    /* Add a blinking cursor */
-    white-space: nowrap;
-    /* Make text appear in one line */
-    animation: typewriter 2s steps(30) 10s infinite alternate;
-    /* Adjust animation duration and steps */
-}
-
-body {
-    background-color: black;
-    font-family: monospace;
-    color: yellow;
-    border: 2px solid;
-    text-align: -webkit-center;
-}
 
 h1 {
     font-size: 205%;
@@ -38,6 +31,7 @@ h1 {
 
 span {
     color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 h3 {
@@ -86,6 +80,13 @@ button {
 footer {
     background-color: transparent;
     margin-top: 135%;
+    border-top: 3px solid;
+}
+
+.footer_element {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+
 }
 
 div {
@@ -123,4 +124,18 @@ nav {
 
 #walk {
     display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        background-color: rgb(255, 255, 255);
+    }
+
+    /* Typewriter animation for h1 element */
+    h1 {
+        overflow: hidden;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        animation: typewriter 2s steps(30) 10s infinite alternate;
+    }
 }
