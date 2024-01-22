@@ -1,0 +1,1 @@
+publish on vercel
